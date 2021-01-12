@@ -1,0 +1,21 @@
+.input-text {
+  border-radius: 20px;
+  background-color: aqua;
+}
+
+
+button{
+  border-radius: 15px;
+  width: 100px;
+  margin:0 auto;
+  display:block;
+background-color: aqua;
+ color: blanchedalmond;
+}
+body{
+  background-image:url(../assets/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+

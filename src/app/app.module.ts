@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactComponent } from './component/contact/contact.component';
-import { FeaturesComponent } from './component/features/features.component';
-import { AboutComponent } from './component/about/about.component';
-import { LoginComponent } from './component/login/login.component';
-import { SignupComponent } from './component/signup/signup.component';
+import { ContactComponent } from './core/contact/contact.component';
+import { FeaturesComponent } from './core/features/features.component';
+import { AboutComponent } from './core/about/about.component';
+import { LoginComponent } from './core/login/login.component';
+import { SignupComponent } from './core/signup/signup.component';
+import { FormsModule} from '@angular/forms';
+import { HomeComponent } from './core/home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,10 +17,12 @@ import { SignupComponent } from './component/signup/signup.component';
     FeaturesComponent,
     AboutComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
