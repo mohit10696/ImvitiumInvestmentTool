@@ -1,19 +1,35 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AboutComponent } from './component/about/about.component';
-import { LoginComponent } from './component/Auth/login/login.component';
-import { SignupComponent } from './component/Auth/signup/signup.component';
-import { ContactComponent } from './component/contact/contact.component';
-import { FeaturesComponent } from './component/features/features.component';
 import { HomeComponent } from './component/home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'feature', component: FeaturesComponent },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./component/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('./component/about/about.module').then((m) => m.AboutModule),
+  },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./component/auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./component/contact/contact.module').then((m) => m.ContactModule),
+  },
+  {
+    path: 'feature',
+    loadChildren: () =>
+      import('./component/features/feature.module').then(
+        (m) => m.FeatureModule
+      ),
+  },
 ];
 
 @NgModule({

@@ -4,13 +4,9 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-features',
   templateUrl: './features.component.html',
   styleUrls: ['./features.component.css'],
-  
 })
 export class FeaturesComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
