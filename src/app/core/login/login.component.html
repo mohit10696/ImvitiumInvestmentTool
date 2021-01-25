@@ -2,25 +2,54 @@
   <div class="row justify-content-center align-items-center">
     <div id="login-column" class="form-group">
       <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
-        <div class="row justify-content-center align-items-center h2">LOGIN</div>
+        <div class="row justify-content-center align-items-center h2">
+          LOGIN
+        </div>
         name | email <br />
         <input
           type="text"
           class="form-control input-text"
           ngModel
+          #name="ngModel"
           name="email"
           required
         />
-        <br/>
-        Passsword <br />
-        <input type="text" name="password" class="form-control input-text" ngModel required minlength="6" />
+        <small class="text-danger" *ngIf="name.invalid && name.touched"
+          >Invalid Input</small
+        >
         <br />
-        <input type="checkbox" ngModel name="rememberMe"/> Remember Me <br /><br />
+        Passsword <br />
+        <input
+          type="password"
+          name="password"
+          class="form-control input-text"
+          ngModel
+          #password="ngModel"
+          required
+          minlength="6"
+        />
+        <small class="text-danger" *ngIf="password.invalid && password.touched"
+          >Short Password</small
+        >
+        <br />
+        <input type="checkbox" ngModel name="rememberMe" /> Remember Me
+        <br /><br />
         <button class="center" type="submit" [disabled]="!loginForm.valid">
           LOGIN
         </button>
-        <a href="" class="row justify-content-center align-items-center" style="color: white;">Forget Password?</a>
-        <a href="" class="row justify-content-center align-items-center" style="color: white;">Not an User ? Sign Up</a>
+        <a
+          href=""
+          class="row justify-content-center align-items-center"
+          style="color: white"
+          >Forget Password?</a
+        >
+        <a
+          [routerLink]="['/signup']"
+          routerLinkActive="active"
+          class="row justify-content-center align-items-center"
+          style="color: white"
+          >Not an User ? Sign Up</a
+        >
       </form>
     </div>
   </div>

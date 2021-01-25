@@ -1,27 +1,61 @@
-<div class="container ">
-  <div class="row justify-content-center align-items-center" >
+<div class="container">
+  <div class="row justify-content-center align-items-center">
     <div class="col-md-4">
-    <div id="login-column" class="form-group">
-      <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
-        <div class="row justify-content-center align-items-center h2">Contact</div>
-        name<br />
-        <input
-          type="text"
-          class="form-control input-text"
-          ngModel
-          name="email"
-          required
-        />
-        <br/>
-        Email <br />
-        <input type="text" name="password" class="form-control input-text" ngModel required />
-        <br />
-        Message <br>
-        <textarea name="message" class="input-text" style="width: 100%" rows="6"></textarea>
-        <button type="submit" [disabled]="!loginForm.valid" style="background-color: darkblue;">
-          SUBMIT
-        </button>
-      </form>
-    </div></div>
+      <div id="login-column" class="form-group">
+        <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+          <div class="row justify-content-center align-items-center h2">
+            Contact
+          </div>
+          name<br />
+          <input
+            type="text"
+            class="form-control input-text"
+            ngModel
+            name="name"
+            #name="ngModel"
+            required
+            minlength="6"
+          />
+          <small class="text-danger" *ngIf="name.invalid && name.touched"
+            >Invalid Input</small
+          >
+          <br />
+          Email <br />
+          <input
+            type="email"
+            name="email"
+            class="form-control input-text"
+            ngModel
+            pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+            #email="ngModel"
+            required
+          />
+          <small class="text-danger" *ngIf="email.invalid && email.touched"
+            >Invalid Email</small
+          >
+          <br />
+          Message <br />
+          <textarea
+            name="message"
+            class="input-text"
+            style="width: 100%"
+            rows="6"
+            minlength="20"
+            #message="ngModel"
+            ngModel
+          ></textarea>
+          <small class="text-danger" *ngIf="message.invalid && message.touched"
+            >Invalid Input</small
+          >
+          <button
+            type="submit"
+            [disabled]="!loginForm.valid"
+            style="background-color: darkblue"
+          >
+            SUBMIT
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>

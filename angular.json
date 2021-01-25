@@ -24,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ImvitiumInvestmentTool"
+    }
+  },
+  "defaultProject": "ImvitiumInvestmentTool",
+  "cli": {
+    "analytics": "14c2cbb2-5e24-49f3-9fc2-8145ce8cf260"
+  }
 }

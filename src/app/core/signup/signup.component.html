@@ -13,54 +13,80 @@
             class="form-control input-text"
             ngModel
             name="name"
+            #name="ngModel"
             required
           />
-
+          <small class="text-danger" *ngIf="name.invalid && name.touched"
+            >Invalid name</small
+          ><br />
           E-mail <br />
           <input
-            type="text"
+            type="email"
             name="email"
             class="form-control input-text"
+            pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
             ngModel
+            #email="ngModel"
             required
             minlength="6"
           />
-
+          <small class="text-danger" *ngIf="email.invalid && email.touched"
+            >Invalid email</small
+          ><br />
           username <br />
           <input
             type="text"
             name="username"
             class="form-control input-text"
             ngModel
+            #username="ngModel"
             required
             minlength="6"
           />
-
+          <small
+            class="text-danger"
+            *ngIf="username.invalid && username.touched"
+            >Invalid username</small
+          ><br />
           Passsword <br />
           <input
-            type="text"
+            type="password"
             name="password"
             class="form-control input-text"
             ngModel
+            #password="ngModel"
             required
             minlength="6"
           />
-
+          <small
+            class="text-danger"
+            *ngIf="password.invalid && password.touched"
+            >Invalid password</small
+          ><br />
           Confirm Passsword <br />
           <input
-            type="text"
+            type="password"
             name="comfrim-password"
             class="form-control input-text"
             ngModel
+            #ConfirmPassword="ngModel"
             required
             minlength="6"
-          />
+          /><small
+            class="text-danger"
+            *ngIf="
+              ConfirmPassword.touched &&
+              !(password.value == ConfirmPassword.value)
+            "
+            >Password not matched</small
+          ><br />
           <br />
           <button class="center" type="submit" [disabled]="!loginForm.valid">
-            LOGIN
+            SIGN-UP
           </button>
           <a
-            href=""
+            routerLinkActive="true"
+            [routerLink]="['/login']"
             class="row justify-content-center align-items-center"
             style="color: white"
             >Already Have Account ? Log In</a

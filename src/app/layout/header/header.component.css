@@ -1,3 +1,16 @@
 #navbar {
   min-width: 100%;
 }
+
+li {
+  height: fit-content;
+  background-color: #394e78;
+  margin: 5%;
+  border-radius: 20px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+a{
+  text-align: center;
+}
