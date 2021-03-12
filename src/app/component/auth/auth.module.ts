@@ -4,16 +4,25 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
-  declarations: [LoginComponent, SignupComponent],
+  declarations: [
+    LoginComponent,
+    SignupComponent,
+    ForgetPasswordComponent,
+    ChangePasswordComponent
+  ],
   imports: [
+    HttpClientModule,
     FormsModule,
     CommonModule,
     RouterModule.forChild([
       {
         path: '',
-        redirectTo: 'login'
+        redirectTo: 'login',
       },
       {
         path: 'login',
@@ -22,6 +31,14 @@ import { SignupComponent } from './signup/signup.component';
       {
         path: 'signup',
         component: SignupComponent,
+      },
+      {
+        path: 'forgetpassword',
+        component: ForgetPasswordComponent,
+      },
+      {
+        path: 'changepassword',
+        component: ChangePasswordComponent,
       },
     ]),
   ],

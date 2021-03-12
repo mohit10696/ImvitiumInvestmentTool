@@ -1,0 +1,79 @@
+ul#menu li {
+  display: inline;
+}
+
+div {
+  color: white;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  font-size: 40px;
+}
+
+a {
+  font-size: 14px;
+  color: black;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+tr {
+  border-bottom: 1px solid #3cc3c9;
+  padding: 10px;
+}
+
+th,
+td {
+  padding: 8px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  margin-left: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #394e78;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #394e78;
+}
+
+
+.pagination li{
+  cursor: pointer;
+}
+
+.abc a {
+  cursor: pointer;
+  color: black;
+}
+
+.page-item.active .page-link{
+  background-color: #394e78;
+}
+
+.page-link {
+  background-color: #85d6dd;
+  border: none;
+}
+.news-button{
+  border: 0px;
+  width: fit-content;
+  background-color: #394e78;
+  border-radius: 5px;
+  margin: 2px;
+}
