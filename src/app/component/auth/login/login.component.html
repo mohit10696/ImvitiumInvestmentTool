@@ -1,4 +1,4 @@
-<div class="container col-md-4">
+<div class="container ">
   <div class="row justify-content-center align-items-center">
     <div id="login-column" class="form-group">
       <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
@@ -12,8 +12,7 @@
           ngModel
           #name="ngModel"
           name="email"
-          required
-        />
+          required        />
         <small class="text-danger" *ngIf="name.invalid && name.touched"
           >Invalid Input</small
         >
@@ -34,11 +33,13 @@
         <br />
         <input type="checkbox" ngModel name="rememberMe" /> Remember Me
         <br /><br />
-        <button class="center" type="submit" [disabled]="!loginForm.valid">
+        <button class="center" type="submit" >
           LOGIN
         </button>
+        <!-- [disabled]="!loginForm.valid" -->
         <a
-          href=""
+        routerLink="/auth/forgetpassword"
+        routerLinkActive="active"
           class="row justify-content-center align-items-center"
           style="color: white"
           >Forget Password?</a

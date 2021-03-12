@@ -1,0 +1,185 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-5">users</div>
+        <div class="col-md-7" style="padding-bottom: 10px">
+          <div class="col-md-12">filter</div>
+          <div
+            class="col-md-12 abc"
+            style="background-color: #72c6ce; border-radius: 20px; color: white"
+          >
+            <a class="active" (click)="getSubscribeUser()">subscribe</a>
+            <img
+              src="../../assets/star.svg"
+              alt=""
+              width="10px"
+              style="margin-left: 8px"
+            />
+            <a class="active" (click)="getUnsubscribeUser()">unsubscribe</a>
+            <img
+              src="../../assets/star.svg"
+              alt=""
+              width="10px"
+              style="margin-left: 8px"
+            />
+            <a class="active" (click)="getFreeUser()">free</a>
+          </div>
+        </div>
+        <hr />
+        <div
+          class="col-md-12"
+          style="background-color: #85d6dd; padding: 15px; border-radius: 20px"
+        >
+          <div class="row">
+            <div class="col-md-7"></div>
+            <div class="col-md-5">
+              <input
+              [(ngModel)]="searchData"
+              (ngModelChange)="search()"
+                type="search"
+                name=""
+                id=""
+                placeholder="Search"
+                style="
+                  padding-left: 10px;
+                  background-color: #394e78;
+                  width: 100%;
+                  border: none;
+                  border-radius: 20px;
+                "
+              />
+            </div>
+            <div class="col-md-12">
+              <table style="width: 100%; color: black">
+                <tr>
+                  <th>USERNAME</th>
+                  <th>EMAIL</th>
+                  <th>ACCOUNT TYPE</th>
+                  <th>RENEW DATE</th>
+                  <th></th>
+                </tr>
+                <tr *ngFor="let item of userList">
+                  <td>{{ item.username }}</td>
+                  <td>{{ item.email }}</td>
+                  <td>{{ item.account_type }}</td>
+                  <td>-</td>
+                  <td>
+                    <img
+                      src="./../../assets/fountain-pen.svg"
+                      alt=""
+                      width="20px"
+                    />
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="col-md-12">
+              <hr />
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li
+                    class="page-item"
+                    [ngClass]="{ disabled: currentPage == 1 }"
+                  >
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                  </li>
+                  <li
+                    class="page-item "
+                    [ngClass]="{'active': i+1 == currentPage}"
+                    *ngFor="let item of numSequence(); let i = index"
+                  >
+                    <a class="page-link " (click)="changePage(i + 1)">{{
+                      i + 1
+                    }}</a>
+                  </li>
+                  <li
+                    class="page-item"
+                    [ngClass]="{ disabled: currentPage == numberOfPages }"
+                  >
+                    <a class="page-link" (click)="nextPage()">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          total subscribed users
+          <div
+            style="
+              background-color: #394e78;
+              width: 100%;
+              text-align: center;
+              border-radius: 20px;
+            "
+            class="center"
+          >
+            3
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-12">youtube embedded video</div>
+        <div class="col-md-12">
+          <input
+            type="text"
+            name=""
+            id=""
+            value="https://www.youtube.com/watch?v=eDmEPKCNFWI"
+            style="
+              background-color: #394e78;
+              width: 106%;
+              border: none;
+              border-radius: 20px;
+              padding-left: 10px;
+            "
+          />
+        </div>
+        <hr />
+        <div class="col-md-12">news and updates</div>
+        <div
+          class="col-md-12"
+          style="
+            color: black;
+            background-color: #85d6dd;
+            margin-left: 15px;
+            margin-right: 40px;
+            border-radius: 20px;
+            overflow-y: scroll;
+            height: 350px;
+          "
+        >
+          <div
+            *ngFor="let n of numSequence()"
+            style="padding-left: 10px; padding-top: 5px"
+          >
+            <input
+              type="text"
+              name=""
+              id=""
+              value="This is demo build expect some bugs . Please msg me with them"
+              style="width: 90%; background-color: #72c6ce; border: none"
+            />
+            <img
+              src="./../../assets/fountain-pen.svg"
+              alt=""
+              width="18px"
+              style="margin: 2px"
+            />
+            <img
+              src="./../../assets/recycle-bin.svg"
+              alt=""
+              width="18px"
+              style="margin: 2px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
