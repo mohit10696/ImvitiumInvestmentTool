@@ -35,8 +35,8 @@
             <div class="col-md-7"></div>
             <div class="col-md-5">
               <input
-              [(ngModel)]="searchData"
-              (ngModelChange)="search()"
+                [(ngModel)]="searchData"
+                (ngModelChange)="search()"
                 type="search"
                 name=""
                 id=""
@@ -85,11 +85,11 @@
                     <a class="page-link" href="#" tabindex="-1">Previous</a>
                   </li>
                   <li
-                    class="page-item "
-                    [ngClass]="{'active': i+1 == currentPage}"
+                    class="page-item"
+                    [ngClass]="{ active: i + 1 == currentPage }"
                     *ngFor="let item of numSequence(); let i = index"
                   >
-                    <a class="page-link " (click)="changePage(i + 1)">{{
+                    <a class="page-link" (click)="changePage(i + 1)">{{
                       i + 1
                     }}</a>
                   </li>
@@ -125,20 +125,31 @@
         </div>
         <div class="col-md-4"></div>
         <div class="col-md-12">youtube embedded video</div>
-        <div class="col-md-12">
-          <input
-            type="text"
-            name=""
-            id=""
-            value="https://www.youtube.com/watch?v=eDmEPKCNFWI"
-            style="
-              background-color: #394e78;
-              width: 106%;
-              border: none;
-              border-radius: 20px;
-              padding-left: 10px;
-            "
-          />
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10">
+              <input
+                type="text"
+                name=""
+                id=""
+                value="https://www.youtube.com/watch?v=eDmEPKCNFWI"
+                style="
+                  background-color: #85d6dd;
+                  width: 125%;
+                  border: none;
+                  border-radius: 20px;
+                  padding-left: 10px;
+                "
+              />
+            </div>
+            <div class="col-md-2">
+              <button
+                style="border: none; background-color: #394e78; color: black"
+              >
+                SUBMIT
+              </button>
+            </div>
+          </div>
         </div>
         <hr />
         <div class="col-md-12">news and updates</div>
@@ -149,6 +160,7 @@
             background-color: #85d6dd;
             margin-left: 15px;
             margin-right: 40px;
+            padding: 10px;
             border-radius: 20px;
             overflow-y: scroll;
             height: 350px;
@@ -158,25 +170,30 @@
             *ngFor="let n of numSequence()"
             style="padding-left: 10px; padding-top: 5px"
           >
+          <div class="row">
             <input
               type="text"
               name=""
               id=""
               value="This is demo build expect some bugs . Please msg me with them"
-              style="width: 90%; background-color: #72c6ce; border: none"
+              style="width: 85%; background-color: #72c6ce; border: none"
             />
+            <button class="news-button">
             <img
               src="./../../assets/fountain-pen.svg"
               alt=""
               width="18px"
               style="margin: 2px"
-            />
+            /></button>
+            <button class="news-button">
             <img
               src="./../../assets/recycle-bin.svg"
               alt=""
               width="18px"
               style="margin: 2px"
             />
+          </button>
+        </div>
           </div>
         </div>
       </div>

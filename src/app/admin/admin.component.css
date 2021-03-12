@@ -61,3 +61,19 @@ td {
   cursor: pointer;
   color: black;
 }
+
+.page-item.active .page-link{
+  background-color: #394e78;
+}
+
+.page-link {
+  background-color: #85d6dd;
+  border: none;
+}
+.news-button{
+  border: 0px;
+  width: fit-content;
+  background-color: #394e78;
+  border-radius: 5px;
+  margin: 2px;
+}
